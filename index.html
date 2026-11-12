@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What's For Dinner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <div class="brand">
+          <div class="logo"><i class="fa-solid fa-utensils"></i></div>
+          <div>
+            <h1>What's For Dinner</h1>
+            <p>Your daily meal inspiration</p>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="icon-link" title="Saved Recipes" aria-label="Saved Recipes">
+            <span class="saved-icon"><i class="fa-solid fa-bookmark"></i></span>
+          </button>
+          <button class="icon-link" title="Recent" aria-label="Recent"><i class="fa-solid fa-clock-rotate-left"></i></button>
+          <button class="icon-link" title="Settings" aria-label="Settings"><i class="fa-solid fa-gear"></i></button>
+          <button class="avatar" title="Profile" aria-label="Profile">
+            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg" alt="Profile" />
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container main">
+      <article class="card">
+        <div class="media">
+          <img id="recipeImage" src="" alt="" />
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <span class="rating-score" id="ratingScore"></span>
+            <span class="rating-count" id="ratingCount"></span>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <i class="fa-solid fa-clock c-clock"></i>
+              <p class="stat-label">Prep Time</p>
+              <p class="stat-value" id="prepTime"></p>
+            </div>
+            <div class="stat">
+              <i class="fa-solid fa-fire-burner c-fire"></i>
+              <p class="stat-label">Cook Time</p>
+              <p class="stat-value" id="cookTime"></p>
+            </div>
+            <div class="stat">
+              <i class="fa-solid fa-users c-users"></i>
+              <p class="stat-label">Servings</p>
+              <p class="stat-value" id="servings"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="details">
+          <div class="details-top">
+            <div class="tags" id="tags"></div>
+            <div class="title-row">
+              <div>
+                <h3 class="recipe-title" id="recipeTitle"></h3>
+                <p class="recipe-desc" id="recipeDesc"></p>
+              </div>
+              <div class="title-actions">
+                <button class="square-btn" id="saveBtn" aria-label="Save recipe"><i class="fa-solid fa-bookmark"></i></button>
+                <button class="square-btn" id="shareBtn" aria-label="Share recipe"><i class="fa-solid fa-share-nodes"></i></button>
+              </div>
+            </div>
+
+            <div class="alert" id="timeAlert">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <div>
+                <p class="alert-title">Extended Preparation Time</p>
+                <p class="alert-text">This recipe requires more than 45 minutes to prepare. Plan accordingly!</p>
+              </div>
+            </div>
+
+            <div class="tabs" role="tablist">
+              <button class="tab active" data-tab="ingredients" role="tab"><i class="fa-solid fa-list-check"></i> Ingredients</button>
+              <button class="tab" data-tab="instructions" role="tab"><i class="fa-solid fa-book-open"></i> Instructions</button>
+              <button class="tab" data-tab="nutrition" role="tab"><i class="fa-solid fa-chart-pie"></i> Nutrition</button>
+              <button class="tab" data-tab="tips" role="tab"><i class="fa-solid fa-lightbulb"></i> Chef's Tips</button>
+            </div>
+
+            <section class="panel active" id="ingredients">
+              <ul class="box list" id="ingredientsList"></ul>
+            </section>
+
+            <section class="panel" id="instructions">
+              <ol class="box-ins list-ins" id="stepsList"></ol>
+            </section>
+
+            <section class="panel" id="nutrition">
+              <div class="nutrition" id="nutritionGrid"></div>
+            </section>
+
+            <section class="panel" id="tips">
+              <div id="tipsList"></div>
+            </section>
+          </div>
+
+          <div class="footer">
+            <button class="another" id="anotherBtn"><i class="fa-solid fa-rotate"></i> Try Another Recipe</button>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
